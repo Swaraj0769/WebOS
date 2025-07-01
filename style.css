@@ -1,0 +1,296 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: gilroy;
+ }
+
+ html,
+ body {
+     height: 100%;
+     width: 100%;
+ }
+
+
+ /* ---------- Global background ---------- */
+
+ body {
+     margin: 0;
+     height: 100%;
+     background: url("https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg") center / cover fixed;
+     font-family: sans-serif;
+     overflow: hidden;
+ }
+
+#loader {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+#loader video{
+  width: 100%;
+  height: 100%;
+}
+
+ body .player {
+     text-align: center;
+     background: #9f9191;
+     padding: 20px;
+     border-radius: 10px;
+     width: 340px;
+ }
+
+ body .player .controls button {
+     font-size: 20px;
+     margin: 10px;
+     padding: 5px 15px;
+     cursor: pointer;
+ }
+
+ body .player #playlist {
+     list-style: none;
+     padding: 0;
+     margin-top: 20px;
+     max-height: 200px;
+ }
+
+ body .player #playlist #playlist li {
+     cursor: pointer;
+ }
+
+ body .player #playlist #playlist li:active {
+     background: #871313;
+ }
+
+ body .hidden {
+     display: none;
+ }
+
+ /* ---------- Desktop icons ---------- */
+ #desktop {
+     position: relative;
+     width: 100%;
+     height: calc(100% - 40px)
+ }
+
+ .file {
+     width: 80px;
+     text-align: center;
+     color: #ffffff;
+     cursor: pointer;
+     position: absolute;
+     user-select: none;
+ }
+
+ .file img {
+     width: 48px;
+     height: 48px
+ }
+
+ .filename {
+     margin-top: 5px;
+     background: rgba(0, 0, 0, .5);
+     border-radius: 4px;
+     padding: 2px;
+ }
+
+ .filename[contenteditable="true"] {
+     background: #222;
+     outline: 1px dashed #aaa;
+ }
+
+ /* ---------- App windows ---------- */
+ .window {
+     width: 360px;
+     height: 260px;
+     background: #fff;
+     border: 2px solid #333;
+     position: absolute;
+     box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+ }
+
+ .window-header {
+     background: #0078D7;
+     color: #fff;
+     padding: 5px 6px;
+     display: flex;
+     align-items: center;
+     user-select: none;
+ }
+
+ .window-header .title {
+     flex: 1;
+     font-weight: bold
+ }
+
+ .header-btn {
+     cursor: pointer;
+     margin-left: 8px;
+     font-weight: bold
+ }
+
+ .window-body {
+     padding: 8px;
+     height: calc(100% - 32px);
+     box-sizing: border-box;
+     overflow: auto;
+ }
+
+ /* ---------- Task‑bar ---------- */
+ #taskbar {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 45px;
+     background: rgba(0, 0, 0, .75);
+     display: flex;
+     align-items: center;
+     padding: 0 15px;
+     gap: 6px;
+     box-sizing: border-box;
+ }
+
+ #start-btn {
+     width: 30px;
+     height: 30px;
+     background: url("https://cdn-icons-png.flaticon.com/512/732/732225.png") center / contain no-repeat;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+ #search-input {
+     flex: 0 0 200px;
+     height: 26px;
+     border-radius: 4px;
+     border: none;
+     padding: 0 8px;
+     font-size: 14px;
+ }
+
+ .taskbar-icon {
+     width: 30px;
+     height: 30px;
+     cursor: pointer;
+     border-radius: 4px
+ }
+
+ #task-items {
+     flex: 1;
+     display: flex;
+     align-items: center;
+     overflow-x: auto
+ }
+
+ .taskbar-item {
+     color: #fff;
+     background: rgba(255, 255, 255, .1);
+     margin: 0 4px;
+     padding: 4px 8px;
+     border-radius: 4px;
+     cursor: pointer;
+     white-space: nowrap;
+     font-size: 14px;
+ }
+
+ /* ---------- System‑tray ---------- */
+ #system-tray {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     margin-left: auto;
+     color: #fff;
+     font-size: 13px
+ }
+
+ #system-tray img {
+     width: 24px;
+     height: 24px;
+     cursor: pointer;
+ }
+
+ /* ---------- Quick‑settings panel ---------- */
+ #quick-panel {
+     position: absolute;
+     bottom: 46px;
+     right: 10px;
+     width: 360px;
+     background: #22222290;
+     color: #fff;
+     border: 1px solid #555;
+     border-radius: 8px;
+     padding: 10px;
+     font-size: 14px;
+     box-shadow: 0 0 12px rgba(0, 0, 0, .6);
+     z-index: 5000;
+     display: none;
+     box-sizing: border-box;
+ }
+
+ #quick-panel section {
+     margin: 8px 0;
+ }
+
+ .toggle-row {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px
+ }
+
+ .toggle-btn {
+     flex: 1 1 110px;
+     background: #444;
+     color: #fff;
+     padding: 6px;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     text-align: center;
+ }
+
+ .toggle-btn.active {
+     background: #0078D7
+ }
+
+ .slider-row {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     margin-top: 6px
+ }
+
+ .slider-row input {
+     flex: 1
+ }
+
+ .battery-row {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 10px
+ }
+
+.battery-bar img{
+    height: 23px;
+    margin-left: 10px;
+}
+
+
+ .settings-btn {
+     background: #61616100;
+     color: #fff;
+     border: none;
+     padding: 6px 10px;
+     border-radius: 6px;
+     cursor: pointer
+ }
+
+ #user-section {
+     width: 400px;
+     margin-top: 10px;
+     display: flex;
+     /* text-align: center; */
+     color: #fff;
+ }
